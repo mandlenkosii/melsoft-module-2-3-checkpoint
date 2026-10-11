@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Challenge 8</title>
+</head>
+
+<body>
+
+<script>
+
+    // Welcome message
+    alert("Welcome to our membership system!");
+
+    // Ask for the user's name
+    let name = prompt("What is your name?");
+
+    // Use Guest when Cancel or an empty value is provided
+    if (name === null || name.trim() === "") {
+        name = "Guest";
+    }
+
+    // Ask for age
+    const ageInput = prompt("What is your age?");
+    const age = Number(ageInput);
+
+    // Check whether age is valid
+    const validAge =
+        !Number.isNaN(age) &&
+        age >= 1 &&
+        age <= 120;
+
+    // Determine membership
+    const membership =
+        age < 18 ? "Youth" :
+        age < 60 ? "Adult" :
+        "Senior";
+
+    // Ask about newsletter
+    const subscribed =
+        confirm("Do you want to subscribe to our newsletter?");
+
+    // Display results
+    alert(
+        "Name: " + name +
+        "\nAge: " + age +
+        "\nMembership: " + membership +
+        "\nNewsletter: " +
+        (subscribed ? "Subscribed" : "Not subscribed")
+    );
+
+</script>
+
+</body>
+</html>
+
+/* 1. Blocking means that JavaScript will wait for the user to respond before going/executing the next line of code.
+ -  it is a bit of a problem because it interrupts the users experience well in this case some users as it wont be smooth.
+
+ 2. Using custom dialogs or form inputs is better than using the old 
+
+ 3. If the user clicks somewhat cancel this code will return : null and will return an empty string given the user clicks ok 
